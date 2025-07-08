@@ -1,0 +1,7 @@
+# Ambiente virtual
+venv
+__pycache__
+
+# Arquivo de banco de dados
+escola.db
+*.db-journal

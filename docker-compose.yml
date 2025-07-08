@@ -1,0 +1,14 @@
+services:
+  api:
+    # Constrói a imagem a partir do Dockerfile no diretório atual
+    build: .
+    container_name: gestao-escolar-api
+    # Mapeia a porta 8000 do host para a porta 8000 do container
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual no diretório /app do container
+    # Isso permite o live-reloading da aplicação quando os arquivos são alterados
+    volumes:
+      - .:/app
+    # O comando para iniciar a aplicação com reload ativado para desenvolvimento
+    command: uvicorn app:app --host 0.0.0.0 --port 8000 --reload
